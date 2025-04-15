@@ -1,0 +1,14 @@
+{
+    "total_nb_jobs": 10,
+    "total_nb_compute_nodes": 6,
+    "min_nb_tasks_per_job": 5,
+    "max_nb_tasks_per_job": 5,
+    "min_task_duration_sec": 10,
+    "max_task_duration_sec": 10, 
+    "min_dataset_size_MB": 10, 
+    "max_dataset_size_MB": 10,
+    "replication_factor": 1,
+    "compute_node_bw_MBps": 1,
+    "reschedule": "false",
+    "jobs_inter_arrival_expovariate": 0.1
+}
