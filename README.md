@@ -36,11 +36,11 @@ There is a config_sample.json in the repo:
 
 
 ## Start a simulation
-`python3 simulator.py --config config_sample.json --log-level DEBUG --plot-gantt`
+`cd simulator && python3 simulator.py --config config_sample.json --log-level DEBUG --plot-gantt`
 
 ## Start an experimental campaign
 A toy example is given in the xp_campaign.py:
-`python3 xp_campaign.py`
+`cd simulator && python3 xp_campaign.py`
 
 # Visualization: 
 It is possible to draw a Gantt chart of the processing times and transfer times per node with the `plot_gantt_chart` method. 
