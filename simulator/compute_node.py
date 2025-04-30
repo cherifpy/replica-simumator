@@ -27,6 +27,9 @@ class ComputeNode:
             # Simulate task processing
             start_time = self.env.now
             self.master.tracker.log_task_start(new_task.job_id, new_task.task_id, self.node_id, start_time)
-            yield self.env.timeout(new_task.duration)  # actual processing
+            # a processing logic can be injected here 
+            print(f"Starting task {new_task.task_id} at {self.env.now}")
+            yield self.env.timeout(new_task.duration)
+            print(f"Finished task {new_task.task_id} at {self.env.now}")
             end_time = self.env.now
             self.master.tracker.log_task_end(new_task.job_id, new_task.task_id, self.node_id, start_time, end_time)

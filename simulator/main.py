@@ -6,14 +6,20 @@ import random
 import simpy
 
 
-from . import ComputeNode, Job, MasterNode, plot_gantt_chart, Tracker
+from compute_node import ComputeNode
+from jobs import Job
+from master_node import MasterNode
+from plot import plot_gantt_chart
+from tracker import Tracker
 
 logger = logging.getLogger(__name__)
 
 def generate_jobs(env, master, config):
+
     """Generate jobs, each with multiple tasks with the same duration and a related dataset
     The number of tasks in each job, the tasks duration, and the dataset size are all selected
     from a uniform distribution between a Min and Max values."""
+
     for i in range(config['total_nb_jobs']):
         job_id = i
         nb_tasks = random.randint(config['min_nb_tasks_per_job'], config['max_nb_tasks_per_job'])
@@ -43,7 +49,7 @@ def run_simulation(config):
     master.compute_nodes = compute_nodes
 
     # Start all SimPy processes
-    env.process(master.submit_jobs())
+    env.process(master.submit_jobs()) 
     if config['reschedule']:
         env.process(master.reschedule())  # Enable rescheduling at runtime
 
