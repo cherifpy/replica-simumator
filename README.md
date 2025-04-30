@@ -36,7 +36,7 @@ There is a config_sample.json in the repo:
 
 
 ## Start a simulation
-`cd simulator && python3 simulator.py --config config_sample.json --log-level DEBUG --plot-gantt`
+`cd simulator && python3 main.py --config config_sample.json --log-level DEBUG --plot-gantt`
 
 ## Start an experimental campaign
 A toy example is given in the xp_campaign.py:
